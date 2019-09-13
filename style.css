@@ -1,0 +1,252 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+*:focus {
+	outline: 0;
+}
+
+h1 {
+    text-align: center;
+    font-size: 46px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: roboto, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #9acc99;
+    padding-top: 40px;
+    text-shadow: 4px 0px 0px #000, 2px 0px 0px #000, 0px 2px 0px #000, 0px 2px 0px #000;
+}
+
+h1:after {
+    content: "";
+    background: url(./snake.png);
+    width: 125px;
+    height: 125px;
+    display: flex;
+    background-size: 100%;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+body {
+    height: 100vh;
+    background: url(./background.jpg) no-repeat;
+    background-size: cover;
+}
+
+span.perdeu {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.over {
+    background: #000000;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    opacity: 0.8;
+    display: none;
+}
+
+.over.active {
+    opacity: 0.5;
+    display: flex;
+}
+
+.wrapper-popup {
+    position: absolute;
+    width: 512px;
+    height: 512px;
+    align-items: center;
+    background: #9acc99;
+    display: none;
+    justify-content: center;
+    font-size: 50px;
+    font-family: roboto, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 auto;
+    flex-direction: column;
+}
+
+.wrapper-popup.active {
+    display: flex;
+}
+
+.wrapper-popup button {
+    border: 1px solid #fff;
+    background: #fff;
+    padding: 16px 50px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#dificuldade {
+    position: absolute;
+    width: 512px;
+    height: 512px;
+    align-items: center;
+    background: #9acc99;
+    justify-content: center;
+    font-size: 50px;
+    font-family: roboto, sans-serif;
+    display: flex;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 auto;
+    flex-direction: column;
+}
+
+#dificuldade button {
+    background: #fff;
+    padding: 16px 50px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    width: 50%;
+    margin-bottom: 30px;
+    color: #3F8F3F;
+    border: 0;
+    transition: 0.5s ease;
+}
+
+#dificuldade button:hover {
+    background: #3F8F3F;
+    color: #9acc99;
+}
+
+#dificuldade span.dificuldade {
+    color: #000;
+    font-size: 18px;
+    display: flex;
+    padding-bottom: 80px;
+}
+
+body #dificuldade.hide, #contagem.hide {
+    display: none;
+}
+
+#contagem {
+    position: absolute;
+    width: 512px;
+    height: 512px;
+    align-items: center;
+    background: #9acc99;
+    justify-content: center;
+    font-size: 50px;
+    font-family: roboto, sans-serif;
+    display: flex;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 auto;
+    flex-direction: column;
+}
+
+#contagem.fadeOut {
+    transition: 0.5s ease;
+    opacity: 0;
+}
+
+#contagem .dois path {
+    d: path("M 187 162 L 326 162 L 326 184 L 187 184 Z M 187 240 L 326 240 L 326 262 L 187 262 Z M 187 328 L 326 328 L 326 350 L 187 350 Z M 304 262 L 304 162 L 326 162 L 326 262 Z M 209 240 L 209 350 L 187 350 L 187 240 Z");
+  }
+  
+#contagem .um path {
+    d: path("M 267 162 L 267 350 L 245 350 L 245 162 Z");
+  }
+  
+  svg polyline,
+  svg line,
+  svg path {
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: 0.2s;
+  }
+  
+.pontuacao {
+    font-size: 16px;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.pontuacao:after {
+    content: "";
+    background: url(./gameover.png) no-repeat;
+    width: 215px;
+    height: 145px;
+    background-size: 100%;
+    margin-top: 30px;
+}
+
+.pontuacao span {
+    margin-bottom: 5px;
+    text-transform: capitalize;
+}
+
+.pontuacao span strong {
+    padding-left: 10px;
+}

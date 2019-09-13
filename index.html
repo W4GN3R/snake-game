@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Snake Game</h1>
+    <main>
+        <span id="contagem">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="number-contagem"><g id="group_1">
+                <path id="path" d="M 187 162 L 326 162 L 326 184 L 187 184 Z M 187 328 L 326 328 L 326 350 L 187 350 Z M 211 246 L 326 246 L 326 268 L 211 268 Z M 326 162 L 326 350 L 304 350 L 304 162 Z" stroke-width="1"/>
+            </g></svg>
+        </span>
+        <canvas id="snake" width="512" height="512"></canvas>
+        <div id="dificuldade" class="wrapper-dificuldade">
+            <button  value="facil">fácil</button>
+            <button  value="medio">médio</button>
+            <button  value="dificil">difícil</button>
+        </div>
+        <div id="perdeu" class="wrapper-popup">
+            <span class="perdeu">Você Perdeu!</span>
+            <div class="pontuacao">
+                <span>Melhor Pontuação:<strong id="Melhorponto">0</strong></span>
+                <span>Pontuação:<strong id="pontos">0</strong></span>
+            </div>
+            <button onclick="reloadJogo();">Reiniciar</button>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
